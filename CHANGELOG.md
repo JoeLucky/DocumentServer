@@ -1,4 +1,293 @@
 # Change log
+## 5.1.2
+### New features
+#### All Editors
+* Update help translations
+
+#### Document Editor
+* Support of multi comments baloon (bug #37422)
+
+### Fixes
+#### All editors
+* Fix crash on loading document in Safari 11.1
+* Fix undo after copy paste in coedit (bug #37424)
+* Fix problems with some thai symbols (bug #37446) ([sdkjs#297](https://github.com/ONLYOFFICE/sdkjs/pull/297))
+
+#### Document Editor
+* Fix changing labels of Content Control ([sdkjs#296](https://github.com/ONLYOFFICE/sdkjs/pull/296))
+* Fix crash on pdf reconnect or check idle ([sdkjs#291](https://github.com/ONLYOFFICE/sdkjs/pull/291))
+* Fix search text in drawing formats ([sdkjs#292](https://github.com/ONLYOFFICE/sdkjs/pull/292))
+* Fix problem with loading pdf renamed to docx ([sdkjs#295](https://github.com/ONLYOFFICE/sdkjs/pull/295))
+
+#### Spreadsheet Editor
+* Fix copy paste in OpenSource menu (bug #37426)
+* Fix Spanish formulas translations
+* Fix open pivot tables with VALUES ([sdkjs#298](https://github.com/ONLYOFFICE/sdkjs/pull/298))
+
+#### Presentation Editor
+* Fix reporter mode in Safari
+
+#### Back-end
+* Fix file corruption after restore connection when version is assembled ([server#80](https://github.com/ONLYOFFICE/server/pull/80))
+
+#### x2t
+* Fix mac related build problems
+* ppt - fix shape geometry in files from newest ms office
+
+## 5.1.1
+### New Features
+#### All Editors
+* Update translations
+* New help entries
+
+#### Spreadsheet Editor
+* Add `CONVERT`, `FTEST`, `HYPGEOM.DIST` formulas
+* Add Spanish formula translations
+
+#### Back-end
+* Add reconnection.attempts, reconnection.delay options to config - applicable for editor-server connection
+* Add fonts folder to static content
+* Add sockjs config section for testing purposes
+
+### Fixes
+#### All Editors
+* Hide empty width glyphs fonts in font picker
+* Don't save changes for undo/redo in server build mode
+* Change size of image pasted form html
+* Fix problem in text selection with Shift
+* Fix redundant symbol in cell after undo-redo (#37343)
+* Fix error with repeated reconnection
+* Fix problems with icons of some buttons
+* Fix sync coedit button in top toolbar and menu (#37377)
+
+#### Document Editor
+* Fix right mouse buttom menu for TOC (#37241)
+* Fix usage Clip ParaDrawing by line top and bottom
+* Don't clip images in text arts
+* Add vertical clip for inline drawing
+* Fix problems in drawing inline objects
+* Fix bug in calculation text clip rect in documents
+* Fix `Cannot read property 'B8a' of null` error in some files (#37378)
+
+#### Spreadsheet Editor
+* Fix right mouse button error (#37330)
+* Fix inserting hieroglyphs from text editor (#37356)
+* Fix bug with enter symbol point in formula autocompleate (#37300)
+* Fix bug with enter symbol `_` or `\` in start formula autocompleate (bug #37354)
+* Fix bug with enter Chinese numbers in formula autocompleate
+* Fix `Cannot read property 'toLocaleString'` error in some files (#37343)
+* Fix `Cannot read property '4''` error in some files (#37376)
+* Fix sheet context menu visibility (#37307)
+* Fix translations for formulas
+* Fix inserting function in opened cell (#37348)
+* Correct some formulas translations
+
+#### Presentation Editor
+* Fix hieroglyph problem in chart title (#37293)
+* Fix chart title focus problem in coedit (#37295)
+* Fix object selection problem in coedit (#37336)
+* Remove `console.log` about `End_CollaborationEditing`
+* Clamp scroll_central position
+* Bug with clearing cached canvas
+* Fix bug in calculation of slide layout bounds
+* Fix `Cannot read property 'Ec' of null` error in some files (#37386)
+
+#### Back-end
+* Fix font generation
+* Fix inconsistent database status after files assemble in case of rapid open/close connection
+
+#### x2t
+* Fix reopening files with macros (#37323)
+* Fix opening some Docx user files
+* Fix opening some XLS user files
+
+#### DesktopEditors
+* Fix gradient bug
+* Fix printing cell borders (#35367)
+
+## 5.1.0
+### New Features
+#### All Editors
+* New `no squares` font engine, find best replacement font for `□` characters
+* Ability to distribute data in tables
+* New fonts in default font set
+* Fully rewritten composite input for characters
+* New header and background color
+* Support of shape side panel for images
+* Change table size by drag'n'drop
+* New bullet list marker - `–`
+* Redone connection of second user to document in Strict mode
+* Increase supported document size (without media-content)
+* New help entries
+* Search in help
+
+#### Document Editor
+* Ability to set Tab Leader symbols
+* Support of Table of Contents
+* New `Navigation` left sidebar
+* New `Reference` tab
+* Rename `Review` tab to `Collaboration`  
+* Changes history in Strict Co-Edit
+* Rename `Display Modes` entries for Track Changes
+* File tab `Go to documents` opens in new tab
+* Ability to set negative top and bottom page margin
+* Copy paragraph style will not overwright custom run style
+* Special paste of tables
+
+#### Spreadsheet Editor
+* Custom user cell styles are now placed before default ones
+* 8 new formulas: `F.TEST`, `FORECAST.ETS`, `FORECAST.ETS.CONFINT`,
+`FORECAST.ETS.SEASONALITY`, `FORECAST.ETS.STAT`, `FORMULATEXT`,
+`IFS`, `PDURATION`
+* New `None` Table Template
+* New editing tools for Pivot Tables
+* New regional presets - `Deutsch (Schweiz)`, `Español (México)`,
+ `Nederlands (Nederland)`, `Slovenčina (Slovenská republika)`
+* New date formats `yy/m/d`, `yy/mm/dd`, `yyyy/m/d`
+* CSV preview before opening
+
+#### Presentation Editor
+* Special paste
+* Presentation level comments
+
+#### Plugins
+* Added `Macros` plugin
+* Fix plugin autostart problem
+
+#### x2t
+* Support a lot of features in xls format (macros, controls etc.)
+* Speedup of opening ooxml files on 5-10%
+* Better compatibility with OpenFormat, RTF
+* Fix a lot of error in user-send files in all supported formats
+
+#### Document Builder
+* Add new `GetSheets`, `GetSheet`,  methods
+* Add `GetVisible`, `SetVisible`, `GetName` `GetIndex` for ApiWorksheet
+* Add getter and setter properties Visible in ApiWorksheet
+* Add getter property Index in ApiWorksheet
+* Add getter and setter properties Name in ApiWorksheet
+* Add getter property Sheets in Api
+* Add getter property ActiveCell in ApiWorksheet
+* Add function GetValue in ApiRange
+* Add getter property Value, function ForEach in ApiRange
+* Add function Format in Api
+* Add function GetCells in ApiWorksheet
+* Add getter property Cells in ApiWorksheet
+* Add function GetUsedRange in ApiWorksheet
+* Add getter property UsedRange in ApiWorksheet
+* Add function GetRowHeight in ApiWorksheet
+
+### Fixes
+#### All Editors
+* A lot of bugs fixed
+* Fix toolbar icons problems
+* Fix editing problems while connecting to document with a lot of changes
+
+## 5.0.7
+### New Features
+#### Licensing
+* New license type - by unique users id's and access period
+
+#### Document Builder
+* Add a lot of getters and setters
+* New methods to AddSheet
+
+#### Spreadsheet Editors
+* Add stirkeout, superscript and subscript in top toolbar (bug #26581)
+
+#### Help
+* New entries in help for each editor tab
+
+### Fixes
+#### All Editors
+* Update translations
+* Set focus out of the editor frame in IE/Edge
+
+#### Document Editor
+* Fix opening docx file with formula in MS Word (bug #36490)
+* Fix JS error while inserting Spreadsheet cell with comment (bug #36506)
+* Fix bug with inserting the content control in the math equation.
+* Fix reset selection from object in header/footer after keyboard move
+
+#### Spreadsheet Editors
+* Fix wrong dependence in formula with 3D Ref after removing sheet
+* Fix opening odt with chart
+* Fix calculating sparkline in some case (bug #36603)
+* Fix printing image outside of printed range (bug #36573)
+
+#### Presentation Editor
+* Fix shape blocking in coedit for users with different mode (bug #36435)
+* Fix chart `Constant proportions` working only once (bug #36494)
+* Fix JS error while inserting page number from Document Editor (bug #36508)
+* Fix JS error while undo of table (bug #36515)
+
+#### Back-end
+* Fix IIS URL Rewrite while uploading image
+* Fix ttf fonts not gziped
+
+#### Integration Example
+* Remove `Integration Edition` from logo
+
+#### x2t
+* Fix some DOCX, DOC, RTF files from users
+* Fix DOCX with MathType equations (bug #36524)
+
+## 5.0.6
+### New Features
+#### Licensing
+* New license type - by unique users count
+
+### Fixes
+#### Document Editor
+* JS Error while inserting empty cell to chart title (bug #36441)
+* Remove non-actual Rich Text Content Control help files
+* Hide Clipart plugin window if version history opened (bug #36464)
+
+#### Back-end
+* Long outbox request authorization headers are reduced (bug #36202)
+
+#### Windows Version
+* Fix jwt enabling in ds example
+
+## 5.0.5
+### New Features
+#### DesktopEditors
+* Added two types of restrictions for editing a document - OnlySignatures and View
+
+### Fixes
+#### All Editors
+* Fix red cross for images in some situations
+
+#### Spreadsheet Editors
+* Fix `a.Se is not a function` error while opening file (bug #36344)
+* Fix error with merge table colors
+* Fix merge cells after apply table template (bug #36405)
+
+#### Presentation Editor
+* Check buttons layout in reporter mode
+* Disable scroll to target in selectwheel (empty selection)
+* Fix applying image as background for several slides (bug #36399)
+* Fix mouse slide scroll without change zoom (bug #28096)
+
+#### Plugins
+* Fix calling plugins in non-tabbed interface [Docker-DocumentServer#84](https://github.com/ONLYOFFICE/Docker-DocumentServer/issues/84)
+* Fix crash on unknown ole-object resize
+* Yandex.Translate add progress bar
+
+#### x2t
+* Fix colors schemes for table cells (bug #36322)
+* Fix problem with image in footnote (bug #36380)
+
+#### Back-end
+* Fix calculate connections. exclude view users
+
+#### deb
+* Fix nodejs dependency (force NodeJS 6 LTS)
+
+#### Document Builder
+* Service key size reduced to 20 characters
+* Change HTTP error code from 403 to 402 in case of incorrect license
+
 ## 5.0.4
 ### Fixes
 #### All Editors
